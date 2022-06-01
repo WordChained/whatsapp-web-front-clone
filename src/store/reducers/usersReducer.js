@@ -1,9 +1,11 @@
+import { generateDiceBearAvatars } from "../../assets/data/randomImages";
+
 export const InitialUsersState = {
   //messages are an array of messages between the current user and his contacts
   loggedInUser: {
     id: "54321",
     name: "Tal Ben David",
-    profileImage: undefined,
+    profileImage: generateDiceBearAvatars(Math.random()),
   },
   users: [
     {
@@ -23,37 +25,62 @@ export const InitialUsersState = {
           senderId: "54321",
         },
       ],
-      profileImage: undefined,
+      profileImage: generateDiceBearAvatars(Math.random()),
     },
     {
       id: "6543",
       name: "kaaks asdkha da",
       messages: [],
-      profileImage: undefined,
+      profileImage: generateDiceBearAvatars(Math.random()),
     },
     {
       id: "23424",
       name: "kasjd ads jas",
       messages: [],
-      profileImage: undefined,
+      profileImage: generateDiceBearAvatars(Math.random()),
     },
-    { id: "3463", name: "alsdja asd", messages: [], profileImage: undefined },
-    { id: "2334", name: "rtawwd aw aa", messages: [], profileImage: undefined },
-    { id: "7345", name: "ashsdw dasw", messages: [], profileImage: undefined },
+    {
+      id: "3463",
+      name: "alsdja asd",
+      messages: [],
+      profileImage: generateDiceBearAvatars(Math.random()),
+    },
+    {
+      id: "2334",
+      name: "rtawwd aw aa",
+      messages: [],
+      profileImage: generateDiceBearAvatars(Math.random()),
+    },
+    {
+      id: "7345",
+      name: "ashsdw dasw",
+      messages: [],
+      profileImage: generateDiceBearAvatars(Math.random()),
+    },
     {
       id: "8543",
       name: "twef aw wwwqq",
       messages: [],
-      profileImage: undefined,
+      profileImage: generateDiceBearAvatars(Math.random()),
     },
-    { id: "23625", name: "jga asdn", messages: [], profileImage: undefined },
+    {
+      id: "23625",
+      name: "jga asdn",
+      messages: [],
+      profileImage: generateDiceBearAvatars(Math.random()),
+    },
     {
       id: "743653",
       name: "ayqwv wtrfr",
       messages: [],
-      profileImage: undefined,
+      profileImage: generateDiceBearAvatars(Math.random()),
     },
-    { id: "354352", name: "3fagae", messages: [], profileImage: undefined },
+    {
+      id: "354352",
+      name: "3fagae",
+      messages: [],
+      profileImage: generateDiceBearAvatars(Math.random()),
+    },
   ],
   currentUser: undefined,
 };

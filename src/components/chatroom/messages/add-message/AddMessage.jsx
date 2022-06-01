@@ -14,8 +14,10 @@ export const AddMessage = () => {
 
   const onSubmit = (ev) => {
     ev.preventDefault();
+    const text = ev.target.children[2].value.trim();
+    if (text.length === 0) return;
     const message = {
-      message: ev.target.children[2].value.trim(),
+      message: text,
       id: nanoid(),
       senderId: usersState.loggedInUser.id,
       sentAt: Date.now(),
