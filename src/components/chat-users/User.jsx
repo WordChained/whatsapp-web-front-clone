@@ -34,7 +34,13 @@ export const User = ({ user }) => {
           <span className={styles.date}>{getLastMessageTime()}</span>
         </div>
         <div className={styles.lowerLine}>
-          <span>last message</span>
+          <span className={styles.latestMessage}>
+            {user.messages.length > 0 ? (
+              user.messages[user.messages.length - 1].message
+            ) : (
+              <span>...</span>
+            )}
+          </span>
         </div>
       </div>
     </div>

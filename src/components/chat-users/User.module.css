@@ -53,3 +53,6 @@
   top: 10px;
   font-size: 0.7rem;
 }
+.latestMessage {
+  opacity: 0.7;
+}

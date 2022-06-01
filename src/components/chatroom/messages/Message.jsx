@@ -17,7 +17,12 @@ export const Message = ({ message }) => {
           minute: "numeric",
           hour12: true,
         })}
-        {usersState.loggedInUser.id === message.senderId && " ✔✔"}
+        {usersState.loggedInUser.id === message.senderId && (
+          <span className={styles.marks}>
+            <span>✔</span>
+            <span>✔</span>
+          </span>
+        )}
       </span>
     </div>
   );

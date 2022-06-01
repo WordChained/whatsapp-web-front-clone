@@ -48,3 +48,10 @@
 
   border-top: 10px solid #005c4b;
 }
+.marks {
+  color: #6bc5eb;
+}
+.marks :first-child {
+  position: relative;
+  right: -5px;
+}
