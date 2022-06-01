@@ -1,0 +1,9 @@
+.messagesContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 10;
+  height: 100%;
+  padding: 20px 20px 70px 20px;
+  gap: 15px;
+  overflow-y: auto;
+}

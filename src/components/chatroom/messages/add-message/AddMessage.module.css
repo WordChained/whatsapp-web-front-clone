@@ -1,0 +1,39 @@
+.addMessageContainer {
+  background-color: #202c33;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* width: 100%; */
+  align-items: center;
+}
+.addMessageContainer input {
+  background-color: #2a3942;
+  flex: 6;
+  border-radius: 8px;
+  height: 40px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 0 20px;
+}
+.addMessageContainer {
+  flex: 1;
+}
+.addMessageContainer img {
+  height: 20px;
+  filter: invert(50%);
+  cursor: pointer;
+}
+.imageContainer {
+  flex: 1;
+  object-fit: contain;
+}
+.addMessageContainer button {
+  background-color: transparent;
+  border: none;
+}

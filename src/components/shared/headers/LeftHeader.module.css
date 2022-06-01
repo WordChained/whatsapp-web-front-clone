@@ -1,0 +1,32 @@
+.leftHeaderContainer {
+  background-color: #1b242a;
+  height: 7vh;
+  min-height: 7vh;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profileImageContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 17px;
+}
+.profileImageContainer img {
+  height: 35px;
+  width: 35px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.leftHeaderContainer .rightSideIcons {
+  display: flex;
+  gap: 20px;
+}
+.leftHeaderContainer .rightSideIcons img {
+  height: 20px;
+  filter: invert(60%);
+  cursor: pointer;
+}

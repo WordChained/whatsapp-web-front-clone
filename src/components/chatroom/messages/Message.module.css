@@ -1,0 +1,50 @@
+.messageContainer {
+  background-color: #202c33;
+  width: max-content;
+  max-width: 80%;
+  padding: 20px 5px;
+  border-radius: 5px;
+  position: relative;
+  text-align: start;
+  min-width: 80px;
+}
+.messageContainer.sent {
+  background-color: #005c4b;
+  align-self: flex-end;
+  /* width: max-content;
+  max-width: 80%;
+  padding: 20px 5px;
+  border-radius: 5px;
+  position: relative;
+  text-align: start; */
+}
+.date {
+  opacity: 0.5;
+  position: absolute;
+  font-size: 0.7rem;
+  right: 5px;
+  bottom: 2px;
+}
+.triangle {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  height: 0;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  border-top: 10px solid #202c33;
+}
+.sent .triangle {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  left: unset;
+  height: 0;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  border-top: 10px solid #005c4b;
+}

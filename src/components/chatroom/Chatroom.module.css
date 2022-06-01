@@ -1,0 +1,10 @@
+.chatroomContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 3;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #0b141a;
+}

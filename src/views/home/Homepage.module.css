@@ -1,0 +1,8 @@
+.homepageContainer {
+  background-color: #222e35;
+  height: 100vh;
+  display: flex;
+  flex: 3;
+  max-width: 1200px;
+  margin: auto;
+}
