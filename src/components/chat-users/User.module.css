@@ -6,6 +6,7 @@
   width: 100%;
   position: relative;
   cursor: pointer;
+  height: 70px;
 }
 
 .userConatiner:hover {
@@ -17,9 +18,21 @@
 .userConatiner.active {
   background-color: rgba(255, 255, 255, 0.151);
 }
-.userConatiner img {
-  height: 40px;
-  width: 40px;
+.imageContainer {
+  background-color: rgba(255, 255, 255, 0.365);
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  /* width: 60px; */
+  border-radius: 50%;
+  object-fit: fill;
+  overflow: hidden;
+  /* border: 1px solid black; */
+}
+.imageContainer img {
+  height: 100%;
+  width: 100%;
   align-self: center;
 }
 .userConatiner .rightSide {

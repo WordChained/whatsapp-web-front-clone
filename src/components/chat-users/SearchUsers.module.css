@@ -9,7 +9,9 @@
   height: 15px;
   left: 30px;
   top: 50%;
+  transform-origin: center;
   transform: translateY(-50%);
+  transition: all 0.1s ease-in-out;
 }
 .searchUsersContainer input {
   background-color: #202c33;
@@ -21,4 +23,13 @@
   width: 100%;
   padding: 0 32px 0 65px;
   outline: none;
+  color: white;
+}
+img.arrow {
+  filter: invert(33%) sepia(75%) saturate(2606%) hue-rotate(149deg)
+    brightness(95%) contrast(97%);
+  height: 27px;
+  width: 27px;
+  transform: rotate(90deg);
+  top: 25%;
 }

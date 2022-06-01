@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import styles from "./User.module.css";
-import defaultProfileIcon from "../../assets/icons/user.png";
-import { UsersContext } from "../../store/contexts/UsersContext";
-import { setCurrentUserACtion } from "../../store/actions/usersActions";
+import React, { useContext } from 'react';
+import styles from './User.module.css';
+import defaultProfileIcon from '../../assets/icons/user.png';
+import { UsersContext } from '../../store/contexts/UsersContext';
+import { setCurrentUserACtion } from '../../store/actions/usersActions';
 
 export const User = ({ user }) => {
   const { usersState, usersDispatch } = useContext(UsersContext);
@@ -13,21 +13,23 @@ export const User = ({ user }) => {
     if (user.messages.length > 0) {
       const lastMessageTimestamp =
         user.messages[user.messages.length - 1].sentAt;
-      return new Date(lastMessageTimestamp).toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "numeric",
+      return new Date(lastMessageTimestamp).toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
         hour12: true,
       });
     } else {
-      return "";
+      return '';
     }
   };
   return (
     <div className={styles.userConatiner} onClick={onUserLeftClick}>
-      <img
-        src={user.profileImage ? user.profileImage : defaultProfileIcon}
-        alt=""
-      />
+      <div className={styles.imageContainer}>
+        <img
+          src={user.profileImage ? user.profileImage : defaultProfileIcon}
+          alt=''
+        />
+      </div>
       <div className={styles.rightSide}>
         <div className={styles.upperLine}>
           <span className={styles.title}>{user.name}</span>
