@@ -1,0 +1,7 @@
+.marks :first-child {
+  position: relative;
+  right: -7px;
+}
+.marks {
+  color: #53bdeb;
+}

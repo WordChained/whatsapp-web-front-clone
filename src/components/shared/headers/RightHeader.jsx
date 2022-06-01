@@ -11,7 +11,14 @@ export const RightHeader = () => {
     <div className={styles.rightHeaderContainer}>
       <div className={styles.leftSide}>
         <div className={styles.imageContainer}>
-          <img src={defaultUser} alt='' />
+          <img
+            src={
+              usersState.currentUser.profileImage
+                ? usersState.currentUser.profileImage
+                : defaultUser
+            }
+            alt=''
+          />
         </div>
         <div className={styles.nameAndInfo}>
           <span>{usersState.currentUser.name}</span>

@@ -24,17 +24,17 @@
   width: 50px;
   min-width: 50px;
   min-height: 50px;
-  /* width: 60px; */
   border-radius: 50%;
   object-fit: fill;
   overflow: hidden;
-  /* border: 1px solid black; */
+  align-self: center;
 }
 .imageContainer img {
   height: 100%;
   width: 100%;
   align-self: center;
 }
+
 .userConatiner .rightSide {
   width: 100%;
   padding: 5px 0;
@@ -68,4 +68,5 @@
 }
 .latestMessage {
   opacity: 0.7;
+  display: flex;
 }

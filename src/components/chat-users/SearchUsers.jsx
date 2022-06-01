@@ -19,7 +19,7 @@ export const SearchUsers = () => {
         onBlur={changeImageToSearchIcon}
       />
       <img
-        className={isArrow && styles.arrow}
+        className={isArrow ? styles.arrow : ''}
         src={isArrow ? arrowIcon : searchIcon}
         alt=''
       />
