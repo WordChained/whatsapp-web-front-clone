@@ -1,42 +1,40 @@
-import React, { useContext, useEffect } from 'react';
-import styles from './User.module.css';
-import defaultProfileIcon from '../../assets/icons/user.png';
-import { UsersContext } from '../../store/contexts/UsersContext';
-import { setCurrentUserACtion } from '../../store/actions/usersActions';
-import { Marks } from '../shared/Marks';
+import React, { useContext, useEffect, useState } from "react";
+import styles from "./User.module.css";
+import defaultProfileIcon from "../../assets/icons/user.png";
+import { UsersContext } from "../../store/contexts/UsersContext";
+import { setCurrentUserAction } from "../../store/actions/usersActions";
+import { Marks } from "../shared/Marks";
 
 export const User = ({ user }) => {
   const { usersState, usersDispatch } = useContext(UsersContext);
+  const [lastMessage, setLastMessage] = useState("...");
   const onUserLeftClick = () => {
-    usersDispatch(setCurrentUserACtion(user));
+    usersDispatch(setCurrentUserAction(user));
   };
-  // useEffect(() => {
-  //   if (user.messages.length > 0) {
-  //     user = usersState.currentUser;
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (user.messages.length > 0) {
+      setLastMessage(user.messages[user.messages.length - 1].message);
+    }
+  }, [user.messages.length]);
+
   const getLastMessageTime = () => {
     if (user.messages.length > 0) {
       const lastMessageTimestamp =
         user.messages[user.messages.length - 1].sentAt;
       const timestring = new Date(lastMessageTimestamp).toLocaleTimeString(
-        'en-US',
+        "en-US",
         {
-          hour: 'numeric',
-          minute: 'numeric',
+          hour: "numeric",
+          minute: "numeric",
           hour12: true,
         }
       );
       return timestring;
     } else {
-      return '';
+      return "";
     }
   };
-  const getLastMessage = () => {
-    if (!user || user.messages.length === 0) return;
-    const lastMessage = user.messages[user.messages.length - 1].message;
-    return lastMessage;
-  };
+
   const isLastMessageMine = () => {
     return (
       user.messages[user.messages.length - 1].senderId ===
@@ -49,7 +47,7 @@ export const User = ({ user }) => {
       <div className={styles.imageContainer}>
         <img
           src={user.profileImage ? user.profileImage : defaultProfileIcon}
-          alt=''
+          alt=""
         />
       </div>
       <div className={styles.rightSide}>
@@ -59,8 +57,8 @@ export const User = ({ user }) => {
         </div>
         <div className={styles.lowerLine}>
           <span className={styles.latestMessage}>
-            {user.messages.length > 0 && isLastMessageMine() ? <Marks /> : ''}
-            {user.messages.length > 0 ? getLastMessage() : <span>...</span>}
+            {user.messages.length > 0 && isLastMessageMine() ? <Marks /> : ""}
+            {user.messages.length > 0 ? lastMessage : <span>...</span>}
           </span>
         </div>
       </div>

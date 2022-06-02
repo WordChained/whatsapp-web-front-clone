@@ -22,9 +22,10 @@ export const AddMessage = () => {
       senderId: usersState.loggedInUser.id,
       sentAt: Date.now(),
     };
-    usersDispatch(addMessageAction(message, usersState.loggedInUser.id));
+    usersDispatch(addMessageAction(message, usersState.currentUser.id));
     ev.target.children[2].value = "";
   };
+
   return (
     <form onSubmit={onSubmit} className={styles.addMessageContainer}>
       <div className={styles.imageContainer}>

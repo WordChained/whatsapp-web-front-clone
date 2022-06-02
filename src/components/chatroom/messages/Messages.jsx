@@ -6,12 +6,11 @@ export const Messages = () => {
   const { usersState } = useContext(UsersContext);
   const messagesRef = useRef();
   useEffect(() => {
-    console.log("changed: ", usersState.currentUser.messages.length);
     if (messagesRef.current) {
-      console.log("current:", messagesRef.current.scrollHeight);
       messagesRef.current.scrollTo(0, messagesRef.current.scrollHeight);
     }
-  }, [usersState.currentUser.messages]);
+  }, [usersState]);
+
   return (
     <div ref={messagesRef} className={styles.messagesContainer}>
       {usersState.currentUser.messages.map((message) => (

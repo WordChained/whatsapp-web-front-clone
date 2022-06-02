@@ -86,21 +86,14 @@ export const InitialUsersState = {
 };
 
 export default (state, action) => {
+  console.log("reducer is called");
   switch (action.type) {
     case "ADD_MESSAGE":
-      const idx = state.users.findIndex((user) => user.id === action.userId);
-      const user = state.users.find((user) => user.id === action.userId);
-      return {
-        ...state,
-        users: state.users.map((user, index) => {
-          if (index === idx) user.messages = [...user.messages, action.message];
-          return user;
-        }),
-        currentUser: {
-          ...state.currentUser,
-          messages: [...state.currentUser.messages, action.message],
-        },
-      };
+      const index = state.users.findIndex((user) => user.id === action.userId);
+      let updatedState = JSON.parse(JSON.stringify(state));
+      updatedState.users[index].messages.push(action.message);
+      updatedState.currentUser = updatedState.users[index];
+      return updatedState;
     case "SET_CURRENT_USER":
       return {
         ...state,
