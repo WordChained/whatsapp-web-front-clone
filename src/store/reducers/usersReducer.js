@@ -92,7 +92,7 @@ export default (state, action) => {
       const index = state.users.findIndex((user) => user.id === action.userId);
       let updatedState = JSON.parse(JSON.stringify(state));
       updatedState.users[index].messages.push(action.message);
-      updatedState.currentUser = updatedState.users[index];
+      updatedState.currentUser.messages = updatedState.users[index].messages;
       return updatedState;
     case "SET_CURRENT_USER":
       return {
