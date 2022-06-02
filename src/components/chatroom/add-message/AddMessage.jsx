@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import styles from "./AddMessage.module.css";
-import smileyIcon from "../../../../assets/icons/happy.png";
-import sendIcon from "../../../../assets/icons/send.png";
-import micIcon from "../../../../assets/icons/microphone-black-shape.png";
-import clipIcon from "../../../../assets/icons/clip.png";
-import { UsersContext } from "../../../../store/contexts/UsersContext";
-import { addMessageAction } from "../../../../store/actions/usersActions";
+import smileyIcon from "../../../assets/icons/happy.png";
+import sendIcon from "../../../assets/icons/send.png";
+import micIcon from "../../../assets/icons/microphone-black-shape.png";
+import clipIcon from "../../../assets/icons/clip.png";
+import { UsersContext } from "../../../store/contexts/UsersContext";
+import { addMessageAction } from "../../../store/actions/usersActions";
 import { nanoid } from "nanoid";
 
 export const AddMessage = () => {

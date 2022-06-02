@@ -1,0 +1,7 @@
+.roomContainer {
+  position: relative;
+  gap: 16px;
+  height: 100%;
+  overflow-y: auto;
+  background-image: url("../../../assets/background-images/black-purple.jpg");
+}

@@ -1,4 +1,4 @@
-.userConatiner {
+.userContainer {
   display: flex;
   object-fit: contain;
   /* gap: 10px; */
@@ -9,13 +9,13 @@
   height: 70px;
 }
 
-.userConatiner:hover {
+.userContainer:hover {
   background-color: rgba(236, 232, 232, 0.098);
 }
-.userConatiner:hover .rightSide {
+.userContainer:hover .rightSide {
   box-shadow: unset;
 }
-.userConatiner.active {
+.userContainer.active {
   background-color: rgba(255, 255, 255, 0.151);
 }
 .imageContainer {
@@ -35,7 +35,7 @@
   align-self: center;
 }
 
-.userConatiner .rightSide {
+.userContainer .rightSide {
   width: 100%;
   padding: 5px 0;
   display: flex;

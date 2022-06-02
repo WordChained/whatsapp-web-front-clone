@@ -8,3 +8,11 @@
   overflow-x: hidden;
   background-color: #0b141a;
 }
+.placeholderContainer {
+  background-color: #222e35;
+  height: 100vh;
+  object-fit: contain;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

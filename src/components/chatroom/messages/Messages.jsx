@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { UsersContext } from "../../../store/contexts/UsersContext";
-import { Message } from "./Message";
+import { Message } from "../single-message/Message";
 import styles from "./Messages.module.css";
 export const Messages = () => {
   const { usersState } = useContext(UsersContext);

@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./User.module.css";
-import defaultProfileIcon from "../../assets/icons/user.png";
-import { UsersContext } from "../../store/contexts/UsersContext";
-import { setCurrentUserAction } from "../../store/actions/usersActions";
-import { Marks } from "../shared/Marks";
+import defaultProfileIcon from "../../../assets/icons/user.png";
+import { Marks } from "../../shared/Marks";
+import { UsersContext } from "../../../store/contexts/UsersContext";
+import { setCurrentUserAction } from "../../../store/actions/usersActions";
 
 export const User = ({ user }) => {
   const { usersState, usersDispatch } = useContext(UsersContext);
   const [lastMessage, setLastMessage] = useState("...");
+  const [isActive, setIsActive] = useState(false);
+
   const onUserLeftClick = () => {
     usersDispatch(setCurrentUserAction(user));
   };
@@ -15,7 +17,16 @@ export const User = ({ user }) => {
     if (user.messages.length > 0) {
       setLastMessage(user.messages[user.messages.length - 1].message);
     }
+    if (usersState.currentUser && user.id === usersState.currentUser.id)
+      setIsActive(true);
+    else false;
+    return () => {};
   }, [user.messages.length]);
+
+  useEffect(() => {
+    if (usersState.currentUser)
+      setIsActive(user.id === usersState.currentUser.id);
+  }, [usersState.currentUser]);
 
   const getLastMessageTime = () => {
     if (user.messages.length > 0) {
@@ -43,7 +54,10 @@ export const User = ({ user }) => {
   };
 
   return (
-    <div className={styles.userConatiner} onClick={onUserLeftClick}>
+    <div
+      className={`${styles.userContainer} ${isActive ? styles.active : ""}`}
+      onClick={onUserLeftClick}
+    >
       <div className={styles.imageContainer}>
         <img
           src={user.profileImage ? user.profileImage : defaultProfileIcon}

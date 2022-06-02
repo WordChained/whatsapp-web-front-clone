@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { UsersContext } from "../../store/contexts/UsersContext";
-import { User } from "./User";
+import { UsersContext } from "../../../store/contexts/UsersContext";
+import { User } from "../single-user/User";
 import styles from "./Users.module.css";
 export const Users = () => {
   const { usersState } = useContext(UsersContext);

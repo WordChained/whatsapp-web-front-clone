@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { UsersContext } from "../../store/contexts/UsersContext";
-import { Homepage } from "../../views/home/Homepage";
 import { RightHeader } from "../shared/headers/RightHeader";
 import styles from "./Chatroom.module.css";
-import { Placeholder } from "./Placeholder";
-import { Room } from "./Room";
+import placeholderScreenshot from "../../assets/imgs/placeholder-screenshot.png";
+import { Room } from "./room/Room";
 export const Chatroom = () => {
   const { usersState } = useContext(UsersContext);
   return (
@@ -15,7 +14,9 @@ export const Chatroom = () => {
           <Room />
         </>
       ) : (
-        <Placeholder />
+        <div className={styles.placeholderContainer}>
+          <img src={placeholderScreenshot} alt="" />
+        </div>
       )}
     </div>
   );
