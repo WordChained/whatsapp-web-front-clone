@@ -34,7 +34,10 @@ export const SearchUsers = ({ setFilter }) => {
     }, 500);
   };
   return (
-    <form className={styles.searchUsersContainer}>
+    <form
+      className={styles.searchUsersContainer}
+      onSubmit={(ev) => ev.preventDefault()}
+    >
       <input
         ref={inputRef}
         type='text'

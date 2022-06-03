@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, forwardRef } from 'react';
 import styles from './User.module.css';
 import defaultProfileIcon from '../../../assets/icons/user.png';
 import { Marks } from '../../shared/Marks';
 import { UsersContext } from '../../../store/contexts/UsersContext';
 import { setCurrentUserAction } from '../../../store/actions/usersActions';
 
-export const User = ({ user }) => {
+export const User = forwardRef(({ user }, ref) => {
   const { usersState, usersDispatch } = useContext(UsersContext);
   const [lastMessage, setLastMessage] = useState('...');
   const [isActive, setIsActive] = useState(false);
@@ -65,6 +65,8 @@ export const User = ({ user }) => {
 
   return (
     <div
+      ref={ref}
+      style={{ overflowAnchor: 'none' }}
       className={`${styles.userContainer} ${isActive ? styles.active : ''}`}
       onClick={onUserLeftClick}
     >
@@ -85,4 +87,4 @@ export const User = ({ user }) => {
       </div>
     </div>
   );
-};
+});

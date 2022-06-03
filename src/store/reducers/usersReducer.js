@@ -1,6 +1,5 @@
 import { generateDiceBearAvatars } from "../../assets/data/randomImages";
 
-
 const getRandomImage = async () => {
   let result
   try {
@@ -10,6 +9,7 @@ const getRandomImage = async () => {
   } catch (error) {
     result = undefined
   }
+  if (Object.keys(result).length === 0) return undefined
   return result
 }
 export const InitialUsersState = {
@@ -98,13 +98,17 @@ export const InitialUsersState = {
 };
 
 export default (state, action) => {
-  console.log("reducer is called");
   switch (action.type) {
     case "ADD_MESSAGE":
       const index = state.users.findIndex((user) => user.id === action.userId);
       let updatedState = JSON.parse(JSON.stringify(state));
       updatedState.users[index].messages.push(action.message);
       updatedState.currentUser.messages = updatedState.users[index].messages;
+      updatedState.users.sort((a, b) => {
+        if (!a.messages.length) return 1
+        else if (!b.messages.length) return -1
+        return b.messages[b.messages.length - 1].sentAt - a.messages[a.messages.length - 1].sentAt
+      })
       return updatedState;
     case "SET_CURRENT_USER":
       return {
