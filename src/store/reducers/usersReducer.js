@@ -1,11 +1,23 @@
 import { generateDiceBearAvatars } from "../../assets/data/randomImages";
 
+
+const getRandomImage = async () => {
+  let result
+  try {
+    result = await new Promise((resolve, reject) => {
+      resolve(generateDiceBearAvatars(Math.random()))
+    })
+  } catch (error) {
+    result = undefined
+  }
+  return result
+}
 export const InitialUsersState = {
   //messages are an array of messages between the current user and his contacts
   loggedInUser: {
     id: "54321",
     name: "Tal Ben David",
-    profileImage: generateDiceBearAvatars(Math.random()),
+    profileImage: getRandomImage(),
   },
   users: [
     {
@@ -25,61 +37,61 @@ export const InitialUsersState = {
           senderId: "54321",
         },
       ],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "6543",
       name: "kaaks asdkha da",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "23424",
       name: "kasjd ads jas",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "3463",
       name: "alsdja asd",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "2334",
       name: "rtawwd aw aa",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "7345",
       name: "ashsdw dasw",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "8543",
       name: "twef aw wwwqq",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "23625",
       name: "jga asdn",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "743653",
       name: "ayqwv wtrfr",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
     {
       id: "354352",
       name: "3fagae",
       messages: [],
-      profileImage: generateDiceBearAvatars(Math.random()),
+      profileImage: getRandomImage(),
     },
   ],
   currentUser: undefined,

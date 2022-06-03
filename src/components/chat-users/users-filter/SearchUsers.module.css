@@ -3,7 +3,7 @@
   padding: 0 12px;
   position: relative;
 }
-.searchUsersContainer img {
+.searchUsersContainer .search {
   position: absolute;
   filter: invert(60%);
   height: 15px;
@@ -18,18 +18,34 @@
   margin: auto;
   border: 0;
   border-radius: 10px;
-  height: 30px;
+  height: 40px;
   margin: 10px 0 10px 0;
   width: 100%;
-  padding: 0 32px 0 65px;
+  padding: 10px 32px 10px 65px;
   outline: none;
   color: white;
 }
-img.arrow {
+.search.arrow {
   filter: invert(33%) sepia(75%) saturate(2606%) hue-rotate(149deg)
     brightness(95%) contrast(97%);
   height: 27px;
   width: 27px;
   transform: rotate(90deg);
   top: 25%;
+}
+.closeButton {
+  position: absolute;
+  right: 25px;
+  height: 14px;
+  top: calc(50% - 7px);
+  filter: invert(60%);
+  cursor: pointer;
+}
+
+.loaderContainer {
+  /* height: 14px;
+  width: 14px; */
+  position: absolute;
+  top: calc(50% - 12.5px);
+  right: 45px;
 }

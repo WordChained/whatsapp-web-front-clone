@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './RightHeader.module.css';
 import defaultUser from '../../../assets/icons/user.png';
 import searchIcon from '../../../assets/icons/search.png';
@@ -7,18 +7,19 @@ import { UsersContext } from '../../../store/contexts/UsersContext';
 
 export const RightHeader = () => {
   const { usersState } = useContext(UsersContext);
+  const [profileImage, setProfileImage] = useState(defaultUser);
+  const isImageExists = async () => {
+    const img = await usersState.currentUser.profileImage;
+    setProfileImage(img ? img : defaultUser);
+  };
+  useEffect(() => {
+    isImageExists();
+  }, []);
   return (
     <div className={styles.rightHeaderContainer}>
       <div className={styles.leftSide}>
         <div className={styles.imageContainer}>
-          <img
-            src={
-              usersState.currentUser.profileImage
-                ? usersState.currentUser.profileImage
-                : defaultUser
-            }
-            alt=''
-          />
+          <img src={profileImage} alt='' />
         </div>
         <div className={styles.nameAndInfo}>
           <span>{usersState.currentUser.name}</span>
